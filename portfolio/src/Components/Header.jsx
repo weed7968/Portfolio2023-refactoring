@@ -18,6 +18,12 @@ export default Header;
 const HeaderFrame = styled.div`
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1000;
 `;
 
 const Logo = styled.div`
@@ -28,6 +34,7 @@ const Logo = styled.div`
 `;
 
 const Button = styled.button`
+  font-family: "Gugi", serif;
   font-size: 25px;
   border: none;
   background-color: transparent;
