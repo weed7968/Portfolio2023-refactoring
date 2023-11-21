@@ -4,13 +4,11 @@ import Img from "../Img/img.jpg";
 
 const MainPage = () => {
   const [textIndex, setTextIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   const texts = ["노력하는", "팀원을 생각하는", "의견을 경청하는"];
 
   useEffect(() => {
     setInterval(() => {
-      setVisible(false);
       setTimeout(() => {
         setTextIndex((Index) => {
           if (Index === texts.length - 1) {
@@ -19,7 +17,6 @@ const MainPage = () => {
             return Index + 1;
           }
         });
-        setVisible(true);
       }, 0);
     }, 5000);
   }, []);
@@ -30,7 +27,7 @@ const MainPage = () => {
         <Image src={Img} alt="MainImg" />
         <Title>
           <p>안녕하세요!:)</p>
-          <Typing visible={visible.toString()}>{texts[textIndex]}</Typing>
+          <Typing>{texts[textIndex]}</Typing>
           <p>개발자 신성철입니다!</p>
         </Title>
       </Contents>
@@ -92,8 +89,7 @@ const blink = keyframes`
 `;
 
 const Typing = styled.div`
-  animation: ${(props) => (props.visible ? typing : "none")} 5s steps(20)
-      infinite,
+  animation: ${typing} 5s steps(20) infinite,
     ${blink} 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
