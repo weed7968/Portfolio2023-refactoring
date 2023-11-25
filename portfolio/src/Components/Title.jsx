@@ -15,10 +15,12 @@ const TitleFrame = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 30px;
 `;
 
 const Text = styled.div`
   min-width: fit-content;
+  font-size: 20px;
 `;
 
 const Bar = styled.div`

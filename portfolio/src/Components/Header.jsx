@@ -5,8 +5,8 @@ const Header = () => {
     <HeaderFrame>
       <Logo />
       <div>
+        <Button>Home</Button>
         <Button>About</Button>
-        <Button>Skills</Button>
         <Button>Project</Button>
       </div>
     </HeaderFrame>
