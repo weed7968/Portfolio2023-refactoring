@@ -4,17 +4,17 @@ import Img from "../Img/img.jpg";
 import Title from "../Components/Title";
 
 const AboutPage = () => {
-  const [ref, inView] = useInView();
+  const [ref, inview] = useInView();
 
   return (
     <About>
       <Contents>
         <Image src={Img} alt="MainImg" />
-        <Intro ref={ref} inView={inView}>
-          <In delay={1} inView={inView}>
+        <Intro ref={ref}>
+          <In $delay={1} $inview={inview}>
             <Title title={"About Me"} />
           </In>
-          <In delay={2} inView={inView}>
+          <In $delay={1.5} $inview={inview}>
             <Title title={"Education"} />
             <ul>
               <li>a</li>
@@ -22,10 +22,10 @@ const AboutPage = () => {
               <li>c</li>
             </ul>
           </In>
-          <In delay={3} inView={inView}>
+          <In $delay={2} $inview={inview}>
             <Title title={"Github / Blog"} />
           </In>
-          <In delay={4} inView={inView}>
+          <In $delay={2.5} $inview={inview}>
             <Title title={"Skills"} />
           </In>
         </Intro>
@@ -93,7 +93,7 @@ const Intro = styled.div`
 const In = styled.div`
   margin-bottom: 30px;
   opacity: 0;
-  animation: ${({ inView }) => (inView ? fadeIn : "none")} 0.5s ease-out
+  animation: ${({ $inview }) => ($inview ? fadeIn : "none")} 0.5s ease-out
     forwards;
-  animation-delay: ${({ delay }) => `${delay}s`};
+  animation-delay: ${({ $delay }) => `${$delay}s`};
 `;
