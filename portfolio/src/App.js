@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Header from "./Components/Header";
 import MainPage from "./Page/MainPage";
 import AboutPage from "./Page/AboutPage";
+import ProjectPage from "./Page/ProjectPage";
 
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -33,6 +34,7 @@ const App = () => {
           <AboutPage />
         </Frame>
       </Container>
+      <ProjectPage />
     </div>
   );
 };
