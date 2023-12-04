@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import testImg from "../Img/testImg.png";
+import { useRecoilValue } from "recoil";
+import { projectList } from "../atoms";
 
 const Project = () => {
+  const List = useRecoilValue(projectList);
+  console.log(List);
   return (
     <ProjectImg $src={testImg}>
       <Title>프로젝트 이름</Title>
