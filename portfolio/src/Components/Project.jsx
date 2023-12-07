@@ -1,21 +1,23 @@
 import styled from "styled-components";
 import testImg from "../Img/testImg.png";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { projectList } from "../atoms";
+import { ModalId } from "../atoms";
 
 const Project = () => {
   const List = useRecoilValue(projectList);
-  console.log(List);
+  const setId = useSetRecoilState(ModalId);
+  const OpenModal = (id) => {
+    setId(id);
+  };
   return (
-    <ProjectImg $src={testImg}>
+    <ProjectImg $src={testImg} onClick={(id) => OpenModal(1)}>
       <Title>프로젝트 이름</Title>
     </ProjectImg>
   );
 };
 
 export default Project;
-
-const ProjectContainer = styled.div``;
 
 const ProjectImg = styled.div`
   position: relative;
