@@ -43,6 +43,7 @@ const Main = styled.div`
   font-weight: bold;
   width: 100vw;
   height: 100vh;
+  background-color: white;
 `;
 
 const Contents = styled.div`

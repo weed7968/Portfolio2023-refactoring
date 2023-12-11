@@ -35,6 +35,8 @@ const App = () => {
         </Frame>
       </Container>
       <ProjectPage />
+      <Transparent />
+      <Footer />
     </div>
   );
 };
@@ -48,4 +50,21 @@ const Container = styled.div`
 
 const Frame = styled.div`
   width: 100vw;
+`;
+
+const Transparent = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+`;
+
+const Footer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #aaaaaa;
+  z-index: -1;
 `;
