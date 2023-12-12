@@ -23,6 +23,7 @@ const HeaderFrame = styled.div`
   left: 0;
   right: 0;
   background-color: #fff;
+  padding: 0 3.5vw;
   z-index: 1000;
 `;
 
