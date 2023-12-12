@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import testImg from "../Img/img.jpg";
+import { AiOutlineCloseSquare } from "react-icons/ai";
 import {
   BsFillDice1Fill,
   BsFillDice2Fill,
@@ -16,8 +17,10 @@ const Modal = () => {
   };
   return (
     <ModalFrame>
+      <Close onClick={CloseModal}>
+        <AiOutlineCloseSquare />
+      </Close>
       <ModalContents>
-        <button onClick={CloseModal}>닫기</button>
         <Image>
           <img src={testImg} />
         </Image>
@@ -71,6 +74,7 @@ const ModalFrame = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
+  border-radius: 20px;
 `;
 
 const ModalContents = styled.div`
@@ -78,9 +82,18 @@ const ModalContents = styled.div`
   padding: 20px;
 `;
 
+const Close = styled.div`
+  position: fixed;
+  cursor: pointer;
+  top: -10px;
+  right: -55px;
+  font-size: 50px;
+  color: white;
+`;
+
 const Image = styled.div`
-  width: 760px;
-  height: 390px;
+  width: 730px;
+  height: 330px;
   & > img {
     border-radius: 15px;
     width: 100%;
@@ -111,6 +124,7 @@ const Text = styled.div`
     }
     p {
       padding-left: 20px;
+      padding-top: 10px;
     }
   }
 `;

@@ -2,17 +2,10 @@ import styled from "styled-components";
 import Img from "../Img/img.jpg";
 import Title from "../Components/Title";
 import Project from "../Components/Project";
-import Modal from "../Components/Modal";
-import { useRecoilValue } from "recoil";
-import { ModalId } from "../atoms";
 
 const ProjectPage = () => {
-  const modalOpen = useRecoilValue(ModalId);
   return (
     <>
-      <ModalBackground $modalOpen={modalOpen}>
-        <Modal />
-      </ModalBackground>
       <ProjectP>
         <Contents>
           <Image src={Img} alt="MainImg" />
@@ -32,15 +25,6 @@ const ProjectPage = () => {
 };
 
 export default ProjectPage;
-
-const ModalBackground = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 11110;
-  display: ${({ $modalOpen }) => ($modalOpen ? "" : "none")};
-`;
 
 const ProjectP = styled.div`
   font-family: "Nanum Gothic", sans-serif;
