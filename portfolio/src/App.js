@@ -7,7 +7,7 @@ import MainPage from "./Page/MainPage";
 import AboutPage from "./Page/AboutPage";
 import ProjectPage from "./Page/ProjectPage";
 import Modal from "./Components/Modal";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { ModalId } from "./atoms";
 
 const App = () => {
@@ -26,10 +26,14 @@ const App = () => {
     });
   }, []);
 
-  const modalOpen = useRecoilValue(ModalId);
+  const [modalId, setModalId] = useRecoilState(ModalId);
+
+  const CloseModal = () => {
+    setModalId("");
+  };
 
   useEffect(() => {
-    if (modalOpen) {
+    if (modalId) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -38,7 +42,7 @@ const App = () => {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [modalOpen]);
+  }, [modalId]);
 
   return (
     <div>
@@ -51,7 +55,7 @@ const App = () => {
           <AboutPage />
         </Frame>
       </Container>
-      <ModalBackground $modalOpen={modalOpen}>
+      <ModalBackground $modalId={modalId} onClick={CloseModal}>
         <Modal />
       </ModalBackground>
       <ProjectPage />
@@ -72,7 +76,7 @@ const ModalBackground = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  display: ${({ $modalOpen }) => ($modalOpen ? "" : "none")};
+  display: ${({ $modalId }) => ($modalId ? "" : "none")};
 `;
 
 const Container = styled.div`

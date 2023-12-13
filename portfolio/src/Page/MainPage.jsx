@@ -26,7 +26,7 @@ const MainPage = () => {
       <Contents>
         <Image src={Img} alt="MainImg" />
         <Title>
-          <p>안녕하세요!:)</p>
+          <p>안녕하세요! :)</p>
           <Typing>{texts[textIndex]}</Typing>
           <p>개발자 신성철입니다!</p>
         </Title>
@@ -51,7 +51,7 @@ const Contents = styled.div`
   height: 85vh;
   max-width: 1730px;
   max-height: 820px;
-  background-color: #e7e7e7;
+  background-color: #f6fbff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -69,6 +69,9 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  & > p {
+    margin-bottom: 15px;
+  }
 `;
 
 const typing = keyframes`
@@ -96,4 +99,5 @@ const Typing = styled.div`
   overflow: hidden;
   border-right: 3px solid;
   max-width: fit-content;
+  margin-bottom: 15px;
 `;
