@@ -1,6 +1,10 @@
 import { useInView } from "react-intersection-observer";
 import styled, { keyframes } from "styled-components";
 import Img from "../Img/img.jpg";
+import github from "../Img/github.png";
+import velog from "../Img/velog.jpg";
+import html from "../Img/html.png";
+import css from "../Img/css.png";
 import Title from "../Components/Title";
 
 const AboutPage = () => {
@@ -13,20 +17,50 @@ const AboutPage = () => {
         <Intro ref={ref}>
           <In $delay={1} $inview={inview}>
             <Title title={"About Me"} />
+            <p>
+              안녕하세요! 저는 팀원들에게 도움이 되는 개발자로 성장하고 싶은
+              프론트엔드 개발자 신성철입니다.
+            </p>
           </In>
           <In $delay={1.5} $inview={inview}>
             <Title title={"Education"} />
             <ul>
-              <li>a</li>
-              <li>b</li>
-              <li>c</li>
+              <li>2018.03 - 2023.02 신구대 소프트웨어학과 졸업</li>
+              <li>
+                2023.03 - 2023.08 Software Engineering Frontend Bootcamp
+                (코드스테이츠)
+              </li>
             </ul>
           </In>
           <In $delay={2} $inview={inview}>
             <Title title={"Github / Blog"} />
+            <ImgFrame>
+              <a href="https://github.com/weed7968" target="_blank">
+                <ImgBox $src={github} />
+              </a>
+              <a href="https://velog.io/@weed7968" target="_blank">
+                <ImgBox $src={velog} />
+              </a>
+            </ImgFrame>
           </In>
           <In $delay={2.5} $inview={inview}>
             <Title title={"Skills"} />
+            <h3>ㅡ Basic</h3>
+            <Skills>
+              <ImgBox $src={html} />
+              <ImgBox $src={velog} />
+              <ImgBox $src={velog} />
+            </Skills>
+            <h3>ㅡ Basic</h3>
+            <Skills>
+              <ImgBox $src={html} />
+              <ImgBox $src={css} />
+              <ImgBox $src={velog} />
+            </Skills>
+            <Skills>
+              <ImgBox $src={velog} />
+              <ImgBox $src={velog} />
+            </Skills>
           </In>
         </Intro>
       </Contents>
@@ -37,7 +71,6 @@ const AboutPage = () => {
 export default AboutPage;
 
 const About = styled.div`
-  font-family: "Nanum Gothic", sans-serif;
   font-weight: bold;
   width: 100vw;
   height: 100vh;
@@ -91,9 +124,33 @@ const Intro = styled.div`
 `;
 
 const In = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   opacity: 0;
   animation: ${({ $inview }) => ($inview ? fadeIn : "none")} 0.5s ease-out
     forwards;
   animation-delay: ${({ $delay }) => `${$delay}s`};
+`;
+
+const ImgFrame = styled.div`
+  display: flex;
+`;
+
+const ImgBox = styled.div`
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  background-image: url(${({ $src }) => $src});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-right: 20px;
+  border-radius: 15px;
+`;
+
+const Skills = styled.div`
+  display: flex;
+  margin: 10px 0;
 `;

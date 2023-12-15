@@ -15,10 +15,12 @@ const TitleFrame = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 `;
 
 const Text = styled.div`
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
   min-width: fit-content;
   font-size: 20px;
 `;
