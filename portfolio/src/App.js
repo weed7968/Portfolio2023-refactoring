@@ -32,6 +32,10 @@ const App = () => {
     setModalId("");
   };
 
+  const StopEventBubbling = (e) => {
+    e.stopPropagation();
+  };
+
   useEffect(() => {
     if (modalId) {
       document.body.style.overflow = "hidden";
@@ -56,7 +60,9 @@ const App = () => {
         </Frame>
       </Container>
       <ModalBackground $modalId={modalId} onClick={CloseModal}>
-        <Modal />
+        <div onClick={StopEventBubbling}>
+          <Modal />
+        </div>
       </ModalBackground>
       <ProjectPage />
       <Transparent />
