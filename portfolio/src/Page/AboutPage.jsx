@@ -5,6 +5,10 @@ import github from "../Img/github.png";
 import velog from "../Img/velog.jpg";
 import html from "../Img/html.png";
 import css from "../Img/css.png";
+import js from "../Img/js.png";
+import react from "../Img/react.png";
+import styledComponents from "../Img/styledComponents.png";
+import recoil from "../Img/recoil.png";
 import Title from "../Components/Title";
 
 const AboutPage = () => {
@@ -48,18 +52,14 @@ const AboutPage = () => {
             <h3>ㅡ Basic</h3>
             <Skills>
               <ImgBox $src={html} />
-              <ImgBox $src={velog} />
-              <ImgBox $src={velog} />
-            </Skills>
-            <h3>ㅡ Basic</h3>
-            <Skills>
-              <ImgBox $src={html} />
               <ImgBox $src={css} />
-              <ImgBox $src={velog} />
+              <ImgBox $src={js} />
             </Skills>
+            <h3>ㅡ Library</h3>
             <Skills>
-              <ImgBox $src={velog} />
-              <ImgBox $src={velog} />
+              <ImgBox $src={react} />
+              <ImgBox $src={styledComponents} />
+              <ImgBox $src={recoil} />
             </Skills>
           </In>
         </Intro>
