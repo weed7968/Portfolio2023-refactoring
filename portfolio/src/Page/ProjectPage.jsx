@@ -1,21 +1,23 @@
 import styled from "styled-components";
-import Img from "../Img/img.jpg";
 import Title from "../Components/Title";
 import Project from "../Components/Project";
+import { useRecoilValue } from "recoil";
+import { projectList } from "../atoms";
 
 const ProjectPage = () => {
+  const PList = useRecoilValue(projectList);
+
   return (
     <>
       <ProjectP>
         <Contents>
-          <Image src={Img} alt="MainImg" />
+          <Image src={process.env.PUBLIC_URL + "/Img/img.jpg"} alt="MainImg" />
           <Intro>
             <Title title={"Project"} />
             <Frame>
-              <Project />
-              <Project />
-              <Project />
-              <Project />
+              {PList.map((obj, index) => (
+                <Project key={index} {...obj} />
+              ))}
             </Frame>
           </Intro>
         </Contents>

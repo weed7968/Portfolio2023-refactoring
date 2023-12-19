@@ -1,14 +1,5 @@
 import { useInView } from "react-intersection-observer";
 import styled, { keyframes } from "styled-components";
-import Img from "../Img/img.jpg";
-import github from "../Img/github.png";
-import velog from "../Img/velog.jpg";
-import html from "../Img/html.png";
-import css from "../Img/css.png";
-import js from "../Img/js.png";
-import react from "../Img/react.png";
-import styledComponents from "../Img/styledComponents.png";
-import recoil from "../Img/recoil.png";
 import Title from "../Components/Title";
 
 const AboutPage = () => {
@@ -17,7 +8,7 @@ const AboutPage = () => {
   return (
     <About>
       <Contents>
-        <Image src={Img} alt="MainImg" />
+        <Image src={process.env.PUBLIC_URL + "/Img/img.jpg"} alt="MainImg" />
         <Intro ref={ref}>
           <In $delay={1} $inview={inview}>
             <Title title={"About Me"} />
@@ -40,10 +31,10 @@ const AboutPage = () => {
             <Title title={"Github / Blog"} />
             <ImgFrame>
               <a href="https://github.com/weed7968" target="_blank">
-                <ImgBox $src={github} />
+                <ImgBox $src={process.env.PUBLIC_URL + "/Img/github.png"} />
               </a>
               <a href="https://velog.io/@weed7968" target="_blank">
-                <ImgBox $src={velog} />
+                <ImgBox $src={process.env.PUBLIC_URL + "/Img/velog.jpg"} />
               </a>
             </ImgFrame>
           </In>
@@ -51,15 +42,17 @@ const AboutPage = () => {
             <Title title={"Skills"} />
             <h3>ㅡ Basic</h3>
             <Skills>
-              <ImgBox $src={html} />
-              <ImgBox $src={css} />
-              <ImgBox $src={js} />
+              <ImgBox $src={process.env.PUBLIC_URL + "/Img/html.png"} />
+              <ImgBox $src={process.env.PUBLIC_URL + "/Img/css.png"} />
+              <ImgBox $src={process.env.PUBLIC_URL + "/Img/js.png"} />
             </Skills>
             <h3>ㅡ Library</h3>
             <Skills>
-              <ImgBox $src={react} />
-              <ImgBox $src={styledComponents} />
-              <ImgBox $src={recoil} />
+              <ImgBox $src={process.env.PUBLIC_URL + "/Img/react.png"} />
+              <ImgBox
+                $src={process.env.PUBLIC_URL + "/Img/styledComponents.png"}
+              />
+              <ImgBox $src={process.env.PUBLIC_URL + "/Img/recoil.png"} />
             </Skills>
           </In>
         </Intro>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import Img from "../Img/img.jpg";
 
 const MainPage = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -24,7 +23,7 @@ const MainPage = () => {
   return (
     <Main>
       <Contents>
-        <Image src={Img} alt="MainImg" />
+        <Image src={process.env.PUBLIC_URL + "/Img/img.jpg"} alt="MainImg" />
         <Title>
           <p>안녕하세요! :)</p>
           <Typing>{texts[textIndex]}</Typing>
