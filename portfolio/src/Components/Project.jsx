@@ -1,18 +1,19 @@
 import styled from "styled-components";
-import testImg from "../Img/testImg.png";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { projectList } from "../atoms";
+import { useSetRecoilState } from "recoil";
 import { ModalId } from "../atoms";
 
-const Project = () => {
-  const List = useRecoilValue(projectList);
+const Project = ({ id, title, imageUrl }) => {
   const setId = useSetRecoilState(ModalId);
-  const OpenModal = (id) => {
+  const OpenModal = () => {
     setId(id);
   };
+
   return (
-    <ProjectImg $src={testImg} onClick={(id) => OpenModal(1)}>
-      <Title>프로젝트 이름</Title>
+    <ProjectImg
+      $imageUrl={process.env.PUBLIC_URL + imageUrl}
+      onClick={OpenModal}
+    >
+      <Title>{title}</Title>
     </ProjectImg>
   );
 };
@@ -24,7 +25,7 @@ const ProjectImg = styled.div`
   width: 20vw;
   height: 300px;
   overflow: hidden;
-  background-image: url(${({ $src }) => $src});
+  background-image: url(${({ $imageUrl }) => $imageUrl});
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import testImg from "../Img/img.jpg";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import {
   BsFillDice1Fill,
@@ -7,11 +6,12 @@ import {
   BsFillDice3Fill,
   BsFillDice4Fill,
 } from "react-icons/bs";
-import { useSetRecoilState } from "recoil";
-import { ModalId } from "../atoms";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { ModalId, projectById } from "../atoms";
 
 const Modal = () => {
-  const setId = useSetRecoilState(ModalId);
+  const [id, setId] = useRecoilState(ModalId);
+  const projectInfo = useRecoilValue(projectById);
   const CloseModal = () => {
     setId("");
   };
@@ -22,18 +22,20 @@ const Modal = () => {
       </Close>
       <ModalContents>
         <Image>
-          <img src={testImg} />
+          <img
+            src={process.env.PUBLIC_URL + id ? projectInfo.imageUrl : null}
+          />
         </Image>
         <Text>
           <div>
-            <h3>프로젝트 제목</h3>
+            <h3>{id ? projectInfo.title : null}</h3>
           </div>
           <div>
             <b>
               <BsFillDice1Fill />
             </b>
             프로젝트 설명
-            <p>설명글</p>
+            <p>{id ? projectInfo.text : null}</p>
           </div>
           <div>
             <b>
@@ -41,9 +43,11 @@ const Modal = () => {
             </b>
             사용 기술
             <ul>
-              <li>ㅡ 1</li>
-              <li>ㅡ 2</li>
-              <li>ㅡ 3</li>
+              {id
+                ? projectInfo.skill.map((list, idx) => {
+                    return <li key={idx}>{list}</li>;
+                  })
+                : null}
             </ul>
           </div>
           <div>
@@ -51,14 +55,24 @@ const Modal = () => {
               <BsFillDice3Fill />
             </b>
             GitHub
-            <p>링크</p>
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => window.open(id ? projectInfo.github : null)}
+            >
+              {id ? projectInfo.github : null}
+            </p>
           </div>
           <div>
             <b>
               <BsFillDice4Fill />
             </b>
-            Site
-            <p>링크</p>
+            Link
+            <p
+              style={{ cursor: "pointer" }}
+              onClick={() => window.open(id ? projectInfo.link : null)}
+            >
+              {id ? projectInfo.link : null}
+            </p>
           </div>
         </Text>
       </ModalContents>

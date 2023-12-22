@@ -32,7 +32,7 @@ const ProjectP = styled.div`
   font-family: "Nanum Gothic", sans-serif;
   font-weight: bold;
   width: 100vw;
-  height: 100vh;
+  height: 105vh;
   background-color: #333;
   display: flex;
   justify-content: center;
