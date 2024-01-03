@@ -41,8 +41,10 @@ const Title = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  border: solid 1px black;
+  border: solid 1px white;
   border-radius: 10px;
+  background-color: #333333;
+  color: white;
   opacity: 0;
   transform: translateY(10%);
   transition: opacity 0.3s ease, transform 0.3s ease-in-out;

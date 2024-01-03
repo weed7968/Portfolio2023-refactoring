@@ -92,7 +92,6 @@ const ModalFrame = styled.div`
 `;
 
 const ModalContents = styled.div`
-  width: 800px;
   padding: 20px;
 `;
 
@@ -119,6 +118,7 @@ const Image = styled.div`
 const Text = styled.div`
   padding-top: 20px;
   padding-left: 10px;
+  width: 730px;
   & > div {
     font-family: initial;
     margin-bottom: 30px;

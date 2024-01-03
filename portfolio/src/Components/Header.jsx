@@ -22,15 +22,15 @@ const HeaderFrame = styled.div`
   left: 0;
   right: 0;
   background-color: #fff;
-  padding: 0 3.5vw;
+  padding: 0 5vw;
   z-index: 1000;
 `;
 
 const Logo = styled.div`
   height: 53px;
   width: 109px;
-  margin: 10px 30px;
   border-radius: 3px;
+  margin: 10px 0;
   background-image: url(${process.env.PUBLIC_URL}/Img/logo.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -40,10 +40,10 @@ const Logo = styled.div`
 const Button = styled.button`
   font-family: "Gugi", serif;
   font-size: 25px;
+  margin: 20px 0 0 20px;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  margin: 10px 30px;
   &:hover {
     color: #796bc9;
   }

@@ -49,25 +49,27 @@ const App = () => {
   }, [modalId]);
 
   return (
-    <div>
+    <>
       <Header />
-      <Container className="container">
-        <Frame>
-          <MainPage />
-        </Frame>
-        <Frame>
-          <AboutPage />
-        </Frame>
-      </Container>
-      <ModalBackground $modalId={modalId} onClick={CloseModal}>
-        <div onClick={StopEventBubbling}>
-          <Modal />
-        </div>
-      </ModalBackground>
-      <ProjectPage />
-      <Transparent />
-      <Footer />
-    </div>
+      <div>
+        <Container className="container">
+          <Frame>
+            <MainPage />
+          </Frame>
+          <Frame>
+            <AboutPage />
+          </Frame>
+        </Container>
+        <ModalBackground $modalId={modalId} onClick={CloseModal}>
+          <div onClick={StopEventBubbling}>
+            <Modal />
+          </div>
+        </ModalBackground>
+        <ProjectPage />
+        <Transparent />
+        <Footer />
+      </div>
+    </>
   );
 };
 

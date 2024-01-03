@@ -8,21 +8,22 @@ const ProjectPage = () => {
   const PList = useRecoilValue(projectList);
 
   return (
-    <>
-      <ProjectP>
-        <Contents>
-          <Image src={process.env.PUBLIC_URL + "/Img/img.jpg"} alt="MainImg" />
-          <Intro>
-            <Title title={"Project"} />
-            <Frame>
-              {PList.map((obj, index) => (
-                <Project key={index} {...obj} />
-              ))}
-            </Frame>
-          </Intro>
-        </Contents>
-      </ProjectP>
-    </>
+    <ProjectP>
+      <Contents>
+        <Image
+          src={process.env.PUBLIC_URL + "/Img/projectImg.jpg"}
+          alt="MainImg"
+        />
+        <Intro>
+          <Title title={"Project"} />
+          <Frame>
+            {PList.map((obj, index) => (
+              <Project key={index} {...obj} />
+            ))}
+          </Frame>
+        </Intro>
+      </Contents>
+    </ProjectP>
   );
 };
 
@@ -44,7 +45,8 @@ const Contents = styled.div`
   height: 85vh;
   max-width: 1730px;
   max-height: 820px;
-  background-color: #e7e7e7;
+  margin-top: 30px;
+  background-color: #f6fbff;
   display: flex;
   justify-content: space-between;
 `;

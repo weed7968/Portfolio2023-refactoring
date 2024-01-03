@@ -8,7 +8,10 @@ const AboutPage = () => {
   return (
     <About>
       <Contents>
-        <Image src={process.env.PUBLIC_URL + "/Img/img.jpg"} alt="MainImg" />
+        <Image
+          src={process.env.PUBLIC_URL + "/Img/aboutImg.jpg"}
+          alt="MainImg"
+        />
         <Intro ref={ref}>
           <In $delay={1} $inview={inview}>
             <Title title={"About Me"} />
@@ -67,7 +70,7 @@ const About = styled.div`
   font-weight: bold;
   width: 100vw;
   height: 100vh;
-  background-color: #333;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +81,7 @@ const Contents = styled.div`
   height: 85vh;
   max-width: 1730px;
   max-height: 820px;
-  background-color: #e7e7e7;
+  background-color: #f6fbff;
   display: flex;
   justify-content: space-between;
 `;
