@@ -6,7 +6,6 @@ const Header = () => {
       <Logo />
       <div>
         <Button>Home</Button>
-        <Button>About</Button>
         <Button>Project</Button>
       </div>
     </HeaderFrame>
@@ -28,10 +27,14 @@ const HeaderFrame = styled.div`
 `;
 
 const Logo = styled.div`
-  height: 50px;
-  width: 100px;
+  height: 53px;
+  width: 109px;
   margin: 10px 30px;
-  background-color: #000;
+  border-radius: 3px;
+  background-image: url(${process.env.PUBLIC_URL}/Img/logo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 const Button = styled.button`
@@ -42,6 +45,6 @@ const Button = styled.button`
   cursor: pointer;
   margin: 10px 30px;
   &:hover {
-    color: #b85d5d;
+    color: #796bc9;
   }
 `;
