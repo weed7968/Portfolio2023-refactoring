@@ -22,12 +22,13 @@ export default Project;
 
 const ProjectImg = styled.div`
   position: relative;
-  width: 20vw;
+  width: 22vw;
   height: 300px;
   overflow: hidden;
   background-image: url(${({ $imageUrl }) => $imageUrl});
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;

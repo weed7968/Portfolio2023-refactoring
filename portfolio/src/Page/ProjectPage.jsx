@@ -56,8 +56,8 @@ const Image = styled.img`
 `;
 
 const Intro = styled.div`
-  width: 45%;
-  margin-right: 8%;
+  width: 50%;
+  margin-right: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
