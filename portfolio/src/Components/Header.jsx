@@ -1,12 +1,29 @@
 import styled from "styled-components";
 
-const Header = () => {
+const Header = ({ pageHeight, windowInnerHeight }) => {
+  const navigateHome = () => {
+    window.scrollTo(0, 0);
+  };
+  const navigateAbout = () => {
+    window.scrollTo({
+      top: pageHeight - windowInnerHeight * 3.05,
+      behavior: "smooth",
+    });
+  };
+  const navigateProject = () => {
+    window.scrollTo({
+      top: pageHeight - windowInnerHeight * 2.05,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <HeaderFrame>
       <Logo />
       <div>
-        <Button>Home</Button>
-        <Button>Project</Button>
+        <Button onClick={navigateHome}>Home</Button>
+        <Button onClick={navigateAbout}>About</Button>
+        <Button onClick={navigateProject}>Project</Button>
       </div>
     </HeaderFrame>
   );
@@ -40,7 +57,7 @@ const Logo = styled.div`
 const Button = styled.button`
   font-family: "Gugi", serif;
   font-size: 25px;
-  margin: 20px 0 0 20px;
+  margin: 20px 0 0 40px;
   border: none;
   background-color: transparent;
   cursor: pointer;
