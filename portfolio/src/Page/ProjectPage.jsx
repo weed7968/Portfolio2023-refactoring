@@ -34,7 +34,8 @@ const ProjectP = styled.div`
   font-weight: bold;
   width: 100vw;
   height: 105vh;
-  background-color: #333;
+  /* background-color: #333; */
+  background: linear-gradient(to top, #333 50%, white);
   display: flex;
   justify-content: center;
   align-items: center;
