@@ -28,7 +28,7 @@ const Modal = () => {
         </Image>
         <Text>
           <div>
-            <h3>{id ? process.env.PUBLIC_URL + projectInfo.title : null}</h3>
+            <h3>{id ? projectInfo.title : null}</h3>
           </div>
           <div>
             <b>
