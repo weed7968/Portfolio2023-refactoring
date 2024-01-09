@@ -12,7 +12,7 @@ const AboutPage = () => {
           src={process.env.PUBLIC_URL + "/Img/aboutImg.jpg"}
           alt="MainImg"
         />
-        <Intro ref={ref}>
+        <Intro ref={ref} data-lenis-prevent-wheel>
           <In $delay={1} $inview={inview}>
             <Title title={"About Me"} />
             <p>
@@ -107,6 +107,7 @@ const Intro = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
 
   ul {
     padding-left: 30px;

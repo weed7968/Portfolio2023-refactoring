@@ -14,7 +14,7 @@ const ProjectPage = () => {
           src={process.env.PUBLIC_URL + "/Img/projectImg.jpg"}
           alt="MainImg"
         />
-        <Intro>
+        <Intro data-lenis-prevent-wheel>
           <Title title={"Project"} />
           <Frame>
             {PList.map((obj, index) => (
@@ -62,6 +62,7 @@ const Intro = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
 `;
 
 const Frame = styled.div`
