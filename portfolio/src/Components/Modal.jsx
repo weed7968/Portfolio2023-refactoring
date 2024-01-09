@@ -23,12 +23,12 @@ const Modal = () => {
       <ModalContents>
         <Image>
           <img
-            src={process.env.PUBLIC_URL + id ? projectInfo.imageUrl : null}
+            src={id ? process.env.PUBLIC_URL + projectInfo.imageUrl : null}
           />
         </Image>
         <Text>
           <div>
-            <h3>{id ? projectInfo.title : null}</h3>
+            <h3>{id ? process.env.PUBLIC_URL + projectInfo.title : null}</h3>
           </div>
           <div>
             <b>
