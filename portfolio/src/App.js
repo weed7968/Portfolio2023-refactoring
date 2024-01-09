@@ -8,6 +8,7 @@ import MainPage from "./Page/MainPage";
 import AboutPage from "./Page/AboutPage";
 import ProjectPage from "./Page/ProjectPage";
 import Modal from "./Components/Modal";
+import Footer from "./Components/Footer";
 import { useRecoilState } from "recoil";
 import { ModalId } from "./atoms";
 
@@ -128,15 +129,4 @@ const Transparent = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: transparent;
-`;
-
-const Footer = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #aaaaaa;
-  z-index: -1;
 `;
