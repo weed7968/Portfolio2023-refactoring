@@ -1,18 +1,22 @@
+import React from "react";
 import styled from "styled-components";
 import { useSetRecoilState } from "recoil";
 import { ModalId } from "../atoms";
 
-const Project = ({ id, title, imageUrl }) => {
+interface Props {
+  id: number;
+  title: string;
+  imageUrl: string;
+}
+
+const Project = ({ id, title, imageUrl }: Props) => {
   const setId = useSetRecoilState(ModalId);
   const OpenModal = () => {
-    setId(id);
+    setId(id.toString());
   };
 
   return (
-    <ProjectImg
-      $imageUrl={process.env.PUBLIC_URL + imageUrl}
-      onClick={OpenModal}
-    >
+    <ProjectImg $imageUrl={process.env.PUBLIC_URL + imageUrl} onClick={OpenModal}>
       <Title>{title}</Title>
     </ProjectImg>
   );
@@ -20,7 +24,7 @@ const Project = ({ id, title, imageUrl }) => {
 
 export default Project;
 
-const ProjectImg = styled.div`
+const ProjectImg = styled.div<{ $imageUrl: string }>`
   position: relative;
   width: 22vw;
   height: 300px;

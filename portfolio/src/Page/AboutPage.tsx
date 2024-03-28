@@ -1,3 +1,4 @@
+import React from "react";
 import { useInView } from "react-intersection-observer";
 import styled, { keyframes } from "styled-components";
 import Title from "../Components/Title";
@@ -8,35 +9,26 @@ const AboutPage = () => {
   return (
     <About>
       <Contents>
-        <Image
-          src={process.env.PUBLIC_URL + "/Img/aboutImg.jpg"}
-          alt="MainImg"
-        />
+        <Image src={process.env.PUBLIC_URL + "/Img/aboutImg.jpg"} alt="MainImg" />
         <Intro ref={ref} data-lenis-prevent-wheel>
           <In $delay={1} $inview={inview}>
             <Title title={"About Me"} />
-            <p>
-              안녕하세요! 저는 팀원들에게 도움이 되는 개발자로 성장하고 싶은
-              프론트엔드 개발자 신성철입니다.
-            </p>
+            <p>안녕하세요! 저는 팀원들에게 도움이 되는 개발자로 성장하고 싶은 프론트엔드 개발자 신성철입니다.</p>
           </In>
           <In $delay={1.5} $inview={inview}>
             <Title title={"Education"} />
             <ul>
               <li>2018.03 - 2023.02 신구대 소프트웨어학과 졸업</li>
-              <li>
-                2023.03 - 2023.08 Software Engineering Frontend Bootcamp
-                (코드스테이츠)
-              </li>
+              <li>2023.03 - 2023.08 Software Engineering Frontend Bootcamp (코드스테이츠)</li>
             </ul>
           </In>
           <In $delay={2} $inview={inview}>
             <Title title={"Github / Blog"} />
             <ImgFrame>
-              <a href="https://github.com/weed7968" target="_blank">
+              <a href="https://github.com/weed7968" target="_blank" rel="noreferrer">
                 <ImgBox $src={process.env.PUBLIC_URL + "/Img/github.png"} />
               </a>
-              <a href="https://velog.io/@weed7968" target="_blank">
+              <a href="https://velog.io/@weed7968" target="_blank" rel="noreferrer">
                 <ImgBox $src={process.env.PUBLIC_URL + "/Img/velog.jpg"} />
               </a>
             </ImgFrame>
@@ -52,9 +44,7 @@ const AboutPage = () => {
             <h3>ㅡ Library</h3>
             <Skills>
               <ImgBox $src={process.env.PUBLIC_URL + "/Img/react.png"} />
-              <ImgBox
-                $src={process.env.PUBLIC_URL + "/Img/styledComponents.png"}
-              />
+              <ImgBox $src={process.env.PUBLIC_URL + "/Img/styledComponents.png"} />
               <ImgBox $src={process.env.PUBLIC_URL + "/Img/recoil.png"} />
             </Skills>
           </In>
@@ -120,11 +110,15 @@ const Intro = styled.div`
   }
 `;
 
-const In = styled.div`
+interface InStyle {
+  $inview: boolean;
+  $delay: number;
+}
+
+const In = styled.div<InStyle>`
   margin-bottom: 40px;
   opacity: 0;
-  animation: ${({ $inview }) => ($inview ? fadeIn : "none")} 0.5s ease-out
-    forwards;
+  animation: ${({ $inview }) => ($inview ? fadeIn : "none")} 0.5s ease-out forwards;
   animation-delay: ${({ $delay }) => `${$delay}s`};
 `;
 
@@ -132,7 +126,7 @@ const ImgFrame = styled.div`
   display: flex;
 `;
 
-const ImgBox = styled.div`
+const ImgBox = styled.div<{ $src: string }>`
   width: 70px;
   height: 70px;
   overflow: hidden;

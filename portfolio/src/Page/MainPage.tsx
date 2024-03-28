@@ -1,24 +1,21 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 const MainPage = () => {
-  const [textIndex, setTextIndex] = useState(0);
+  const [textIndex, setTextIndex] = useState<number>(0);
 
-  const texts = ["노력하는", "팀원을 생각하는", "의견을 경청하는"];
+  const texts: string[] = ["노력하는", "팀원을 생각하는", "의견을 경청하는"];
 
   useEffect(() => {
-    setInterval(() => {
-      setTimeout(() => {
-        setTextIndex((Index) => {
-          if (Index === texts.length - 1) {
-            return 0;
-          } else {
-            return Index + 1;
-          }
-        });
-      }, 0);
+    const intervalId = setInterval(() => {
+      setTextIndex((textIndex) => (textIndex === texts.length - 1 ? 0 : textIndex + 1));
     }, 5000);
-  }, []);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [texts.length]);
 
   return (
     <Main>
@@ -92,8 +89,7 @@ const blink = keyframes`
 `;
 
 const Typing = styled.div`
-  animation: ${typing} 5s steps(20) infinite,
-    ${blink} 0.5s step-end infinite alternate;
+  animation: ${typing} 5s steps(20) infinite, ${blink} 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;

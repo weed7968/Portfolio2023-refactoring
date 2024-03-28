@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Title from "../Components/Title";
 import Project from "../Components/Project";
@@ -8,22 +9,21 @@ const ProjectPage = () => {
   const PList = useRecoilValue(projectList);
 
   return (
-    <ProjectP>
-      <Contents>
-        <Image
-          src={process.env.PUBLIC_URL + "/Img/projectImg.jpg"}
-          alt="MainImg"
-        />
-        <Intro data-lenis-prevent-wheel>
-          <Title title={"Project"} />
-          <Frame>
-            {PList.map((obj, index) => (
-              <Project key={index} {...obj} />
-            ))}
-          </Frame>
-        </Intro>
-      </Contents>
-    </ProjectP>
+    <>
+      <ProjectP>
+        <Contents>
+          <Image src={process.env.PUBLIC_URL + "/Img/projectImg.jpg"} alt="MainImg" />
+          <Intro data-lenis-prevent-wheel>
+            <Title title={"Project"} />
+            <Frame>
+              {PList.map((obj, index) => (
+                <Project key={index} {...obj} />
+              ))}
+            </Frame>
+          </Intro>
+        </Contents>
+      </ProjectP>
+    </>
   );
 };
 

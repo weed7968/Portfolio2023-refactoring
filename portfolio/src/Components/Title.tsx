@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 
-const Title = ({ title }) => {
+const Title = ({ title }: { title: string }) => {
   return (
     <TitleFrame>
       <Text>{title}</Text>

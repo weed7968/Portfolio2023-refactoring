@@ -1,6 +1,12 @@
+import React from "react";
 import styled from "styled-components";
 
-const Header = ({ pageHeight, windowInnerHeight }) => {
+interface Props {
+  pageHeight: number;
+  windowInnerHeight: number;
+}
+
+const Header = ({ pageHeight, windowInnerHeight }: Props) => {
   const navigateHome = () => {
     window.scrollTo(0, 0);
   };
